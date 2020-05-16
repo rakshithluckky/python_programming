@@ -1,0 +1,3 @@
+r=input(float("enter the radius of:"))
+area=(22*r*r)/7
+print("area of circle:"area)
