@@ -1,0 +1,3 @@
+filename=input("enter file name:")
+ext=filename.split(".")
+print("extension of file name entered is:"+repr(ext[-1]))
