@@ -1,0 +1,17 @@
+a=0
+b=1
+n=eval(input("enter"))
+count=0
+if (n <= 0) :
+   print("Please enter a positive integer")
+elif n == 1:
+   print("Fibonacci sequence upto",n,":")
+   print(a)
+else:
+   print("Fibonacci sequence:")
+   while (count < n) :
+         f=a+b
+         a=b
+         b=f
+         print(f)
+         count=count+1
