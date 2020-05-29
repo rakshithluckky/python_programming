@@ -1,0 +1,11 @@
+a=(input("please enter a string: "))
+freq={}
+for i in a:
+    if i in freq:
+        freq[i]+=1
+    else:
+        freq[i]=1
+print("original=",freq)
+import operator
+sorted_d=dict(sorted(freq.items(),key=operator.itemgetter(1),reverse=True))
+print('after sorting',sorted_d)
