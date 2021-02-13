@@ -2,7 +2,7 @@ list_enter=(input("enter a list of numbers"))
 list1=list_enter.split(" ")
 print(list1)
 for i in range(0,len(list1)):
-    list1[i]=int(list1(zi])
+    list1[i]=int(list1[i])
 print(list1)
 print("positive numbers in the list:")
 for i in list1:
