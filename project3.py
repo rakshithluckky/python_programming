@@ -1,4 +1,4 @@
-#Project2: Web Scraper using BeautifulSoup4 and requests
+#Project3: Web Scraper using BeautifulSoup4, request, SQL and Databases
 import requests
 from bs4 import BeautifulSoup
 import pandas
