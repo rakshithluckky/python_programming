@@ -1,4 +1,5 @@
 #Project3: Web Scraper using BeautifulSoup4, request, SQL and Databases
+#Web Scrapper code:
 import requests
 from bs4 import BeautifulSoup
 import pandas
@@ -56,3 +57,44 @@ dataFrame = pandas.DataFrame(scrapped_info_List)
 print("Creating csv file...")
 dataFrame.to_csv("Oyo.csv")
 connect.get_hotel_info(args.dbname)
+
+
+
+#Code for creating Database using SQL:
+#using databases to create a table and adding info into db
+#using sql (Structured Query Language)
+#pip install db-sqlite3
+import sqlite3
+
+def connect(dbname):
+    conn=sqlite3.connect(dbname)
+
+    conn.execute("CREATE TABLE IF NOT EXISTS OYO_HOTELS (NAME TEXT, ADDRESS TEXT, PRICE INT, AMENITIES TEXT, RATING TEXT)")
+
+    print("Table created successfully")
+
+    conn.close()
+
+def insert_into_table(dbname, values):
+    conn=sqlite3.connect(dbname)
+    print("Inserted into table"+ str(values))
+    insert_sql="INSERT INTO OYO_HOTELS (NAME, ADDRESS, PRICE, AMENITIES, RATING) VALUES (?, ?, ?, ?, ?)"
+
+    conn.execute(insert_sql,values)
+
+    conn.commit()
+    conn.close()
+
+def get_hotel_info(dbname):
+    conn=sqlite3.connect(dbname)
+
+    cur=conn.cursor()
+
+    cur.execute("SELECT * FROM OYO_HOTELS")
+
+    table_data=cur.fetchall()
+
+    for record in table_data:
+        print(record)
+
+    conn.close()
