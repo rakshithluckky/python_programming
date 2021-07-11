@@ -1,4 +1,5 @@
 #Project2: Web Scraper using BeautifulSoup4 and requests
+#Simple Web Scrapper without using SQL and Databases
 import requests
 from bs4 import BeautifulSoup
 import pandas
